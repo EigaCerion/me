@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NaruReader — Self-Hosted Comic Library | Yusuf Aristokrat</title>
+  <meta name="description" content="Case study: NaruReader, a self-hosted personal comic reader with local storage, WebP compression, and LAN access from any device." />
+  <meta name="theme-color" content="#070914" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%234deeea'/%3E%3Ccircle cx='38' cy='42' r='9' fill='%2304302f'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        Yusuf Aristokrat
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#skills">Skills</a>
+        <a href="/index.html#projects">Projects</a>
+        <a href="/index.html#log">Mission Log</a>
+        <a href="/index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-primary btn-sm" href="/index.html#contact">Get in touch</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container breadcrumb-bar">
+      <a href="/index.html#projects">← Back to projects</a>
+    </div>
+
+    <section class="case-hero">
+      <div class="container">
+        <span class="eyebrow">Mission: Archive</span>
+        <h1>NaruReader — Self-Hosted Comic Library</h1>
+        <p class="lede">A personal comic reader that runs on my own machine: local library, no ads, no third-party accounts — readable from my phone over home Wi-Fi.</p>
+        <div class="case-meta">
+          <span class="chip">Full-stack</span>
+          <span class="chip">Self-hosted</span>
+          <span class="chip">Security-minded</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0;">
+      <div class="container case-body">
+        <div>
+          <div class="case-section">
+            <span class="kicker">Problem</span>
+            <h2>I wanted my own comic library — not someone else's platform.</h2>
+            <p>
+              Reading apps and sites come with ads, accounts I don't need, and no guarantee
+              my collection stays available. I wanted something that keeps everything on my
+              own disk, works from my phone over my home network, and doesn't phone home to
+              anyone.
+            </p>
+          </div>
+
+          <div class="case-section">
+            <span class="kicker">Approach</span>
+            <h2>A real client-server app: Express + SQLite on the back end, React on the front.</h2>
+            <p>
+              NaruReader is a monorepo with an Express/SQLite/Sharp API and a React 18 + Vite
+              + Tailwind + RTK Query front end. A few pieces I'm most proud of:
+            </p>
+            <ul>
+              <li>An automatic WebP compression pipeline for imported pages — benchmarked, not guessed at, and tuned after measuring quality-vs-size tradeoffs directly rather than assuming higher settings were worth the extra time.</li>
+              <li>A SQLite-backed download queue with importer and "supervisor" worker bots: the supervisor re-checks completed chapters for corrupt or missing pages and re-queues only what's actually broken.</li>
+              <li>Full-text search via SQLite FTS5, with prefix matching and a fallback for older data.</li>
+              <li>Role-based accounts (reader, author, editor, publisher, super admin) — but reading requires no login at all; accounts only unlock rating, commenting, and library management.</li>
+              <li>LAN access designed in from the start: the API serves the built front end directly, so a phone on the same Wi-Fi only needs one port, with a PWA manifest for an "app-like" home-screen icon.</li>
+            </ul>
+          </div>
+
+          <div class="case-section">
+            <span class="kicker">Security</span>
+            <h2>Treated as a real app, not a weekend hack.</h2>
+            <p>Since it's reachable on a home network, I built in the basics properly rather than skipping them:</p>
+            <ul>
+              <li>A domain allowlist for anything the server downloads from, with localhost and private IPs always rejected — closes off SSRF through the download feature.</li>
+              <li>All file paths go through a <code>safeJoin()</code> helper that guarantees the resolved path can't escape the data directory, preventing directory traversal.</li>
+              <li>Every database query is parameterized — no string-built SQL, including in search and pagination.</li>
+              <li>Passwords hashed with scrypt, sessions use random 256-bit tokens in HttpOnly cookies, and disabling an account immediately revokes its sessions.</li>
+              <li>Uploads are restricted to image MIME types with size/page limits and are held in memory and compressed rather than ever written to disk raw.</li>
+            </ul>
+          </div>
+
+          <div class="case-section">
+            <span class="kicker">Outcome</span>
+            <h2>Measured, not assumed.</h2>
+            <p>Because the compression pipeline has a benchmark script, the numbers here are actual measurements, not estimates:</p>
+            <ul>
+              <li>~73% file-size reduction on a real test page set (1600×2400 source images), at WebP quality 75 — the documented target was 70–80%, and the benchmark confirmed it lands there.</li>
+              <li>Already-optimized images are passed through untouched (zero re-encoding, zero quality loss) instead of being re-compressed for no reason.</li>
+              <li>Downloads survive interrupted connections: pages are written to a temp file and atomically renamed, so a crash mid-download never leaves a corrupt page mistaken for a valid one — only the genuinely missing pages are re-fetched on resume.</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="case-sidebar">
+          <div class="sidebar-card">
+            <h3>Stack</h3>
+            <div class="stack-list">
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>SQLite</span>
+              <span>Sharp</span>
+              <span>React 18</span>
+              <span>Vite</span>
+              <span>Tailwind</span>
+              <span>RTK Query</span>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h3>Links</h3>
+            <a class="btn btn-ghost btn-sm" href="https://github.com/EigaCerion/comic" target="_blank" rel="noopener">Source on GitHub</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Yusuf Aristokrat. Built from scratch, no template.</span>
+      <a href="/index.html#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

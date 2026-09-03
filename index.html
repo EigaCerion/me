@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yusuf Aristokrat — Software Engineer</title>
+  <meta name="description" content="Yusuf Aristokrat is a software engineer with a systems-analysis and IT-support background, building full-stack web applications. Explore projects, skills, and experience." />
+  <meta name="theme-color" content="#070914" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%234deeea'/%3E%3Ccircle cx='38' cy='42' r='9' fill='%2304302f'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <meta property="og:title" content="Yusuf Aristokrat — Software Engineer" />
+  <meta property="og:description" content="Software engineer with an IT-support and systems-analysis background, building full-stack web applications." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-badge" aria-hidden="true"></span>
+        Yusuf Aristokrat
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#log">Mission Log</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-primary btn-sm" href="#contact">Get in touch</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="top"></div>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="hero-eyebrow"><span class="dot"></span> Open to software engineering roles &amp; freelance web projects</div>
+          <h1>Hi, I'm Yusuf. <br />I build <span class="accent">software</span> that holds up.</h1>
+          <p class="hero-lede">
+            Software engineer with a systems-analysis and IT-support background — now
+            building full-stack web applications, from secure backends to the interfaces
+            people actually use.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View my projects</a>
+            <a class="btn btn-ghost" href="#contact">Contact me</a>
+          </div>
+          <div class="hero-meta">
+            <div><strong>150+</strong><span>Incidents resolved</span></div>
+            <div><strong>3.71</strong><span>GPA out of 4.00</span></div>
+            <div><strong>2</strong><span>Self-driven dev projects</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="planet planet-main"></div>
+          <div class="planet-ring"></div>
+          <div class="planet planet-small"></div>
+
+          <svg class="astronaut" viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="110" cy="238" rx="46" ry="10" fill="#000" opacity="0.25"/>
+            <!-- backpack -->
+            <rect x="78" y="118" width="64" height="70" rx="16" fill="#c7cdf0"/>
+            <rect x="86" y="128" width="48" height="14" rx="4" fill="#4deeea"/>
+            <!-- body -->
+            <path d="M65 130 Q110 108 155 130 L162 210 Q110 232 58 210 Z" fill="#f4f6ff"/>
+            <path d="M90 150 h40 v46 h-40 z" fill="#4deeea" opacity="0.85" rx="8"/>
+            <circle cx="110" cy="173" r="16" fill="#161d40"/>
+            <circle cx="110" cy="173" r="10" fill="#ffb703"/>
+            <!-- arms -->
+            <path d="M65 132 Q34 150 40 190 Q42 205 60 200 Q52 175 72 150 Z" fill="#f4f6ff"/>
+            <path d="M155 132 Q189 146 180 186 Q176 202 158 196 Q168 172 148 150 Z" fill="#f4f6ff"/>
+            <circle cx="46" cy="196" r="12" fill="#c7cdf0"/>
+            <circle cx="172" cy="192" r="12" fill="#c7cdf0"/>
+            <!-- legs -->
+            <path d="M78 205 Q72 226 78 244 L100 244 Q98 222 96 206 Z" fill="#f4f6ff"/>
+            <path d="M142 205 Q148 226 142 244 L120 244 Q122 222 124 206 Z" fill="#f4f6ff"/>
+            <rect x="72" y="240" width="34" height="14" rx="6" fill="#c7cdf0"/>
+            <rect x="114" y="240" width="34" height="14" rx="6" fill="#c7cdf0"/>
+            <!-- helmet -->
+            <circle cx="110" cy="82" r="58" fill="#f4f6ff"/>
+            <circle cx="110" cy="82" r="48" fill="#0b1230"/>
+            <circle cx="110" cy="82" r="48" fill="url(#visorGradient)" opacity="0.9"/>
+            <circle cx="92" cy="66" r="7" fill="#ffffff" opacity="0.85"/>
+            <circle cx="128" cy="98" r="3" fill="#ffffff" opacity="0.5"/>
+            <rect x="98" y="34" width="24" height="10" rx="5" fill="#ff5fb8"/>
+            <defs>
+              <radialGradient id="visorGradient" cx="35%" cy="30%" r="75%">
+                <stop offset="0%" stop-color="#6ad9ff"/>
+                <stop offset="55%" stop-color="#1a2760"/>
+                <stop offset="100%" stop-color="#070914"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="container about-inner reveal">
+        <div class="about-card id-badge">
+          <svg class="avatar" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="58" fill="#161d40" stroke="#2b3568" stroke-width="2"/>
+            <circle cx="60" cy="46" r="48" fill="url(#idVisor)"/>
+            <circle cx="60" cy="46" r="58" fill="none"/>
+            <circle cx="46" cy="34" r="5" fill="#fff" opacity="0.8"/>
+            <defs>
+              <radialGradient id="idVisor" cx="35%" cy="30%" r="75%">
+                <stop offset="0%" stop-color="#6ad9ff"/>
+                <stop offset="60%" stop-color="#16205e"/>
+                <stop offset="100%" stop-color="#070914"/>
+              </radialGradient>
+            </defs>
+          </svg>
+          <h3>Yusuf Aristokrat</h3>
+          <span class="role">Software Engineer</span>
+          <div class="id-stats">
+            <div><span>Status</span><span>Open to work</span></div>
+            <div><span>Base</span><span>Pontianak, Indonesia</span></div>
+            <div><span>Credentials</span><span>IS Diploma · BNSP Certified</span></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">About</span>
+            <h2>Started in IT support. Building software now.</h2>
+          </div>
+          <div class="about-copy">
+            <p>
+              I'm a recent Information Systems graduate (Bina Sarana Informatika University,
+              GPA 3.71/4.00) who spent a year in the trenches of IT support before turning
+              toward software development full-time. As an IT &amp; Facility Building intern
+              at PT. Angkasa Pura II, I resolved 150+ technical incident tickets, supported
+              200+ users across hardware, software, and network issues, and cut average
+              resolution time by 20% — mostly by actually documenting root causes instead of
+              just closing tickets.
+            </p>
+            <p>
+              That experience taught me to think in systems before I could write much code:
+              how a request actually flows, what breaks under real usage, and why
+              documentation and clear error messages save everyone time later. I've since
+              been applying that instinct to full-stack projects of my own — most recently a
+              self-hosted comic reader with a real backend, database, and image-compression
+              pipeline (see Mission: Archive below).
+            </p>
+            <p>
+              I'm PCAP-certified in Python (Cisco Networking Academy) and a BNSP-Certified
+              Software Developer, and I'm actively looking for a software engineering role
+              where I can keep growing.
+            </p>
+          </div>
+          <div class="focus-chips">
+            <span class="chip">Full-stack Web Development</span>
+            <span class="chip">Systems Analysis &amp; IT Support</span>
+            <span class="chip">Databases &amp; Backend</span>
+            <span class="chip">Incident &amp; Problem Resolution</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Tech stack</span>
+          <h2>Instruments on the console</h2>
+          <p>The languages, frameworks, and tools I reach for most, grouped by mission role.</p>
+        </div>
+
+        <div class="skills-grid reveal">
+          <div class="skill-card">
+            <div class="skill-card-head">
+              <span class="skill-icon icon-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+              </span>
+              <h3>Languages</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">HTML / CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-head">
+              <span class="skill-icon icon-magenta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v6"/></svg>
+              </span>
+              <h3>Web &amp; Backend</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Vite</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-head">
+              <span class="skill-icon icon-amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              </span>
+              <h3>Systems &amp; IT Support</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Incident Management</span>
+              <span class="skill-tag">Jira</span>
+              <span class="skill-tag">ServiceNow</span>
+              <span class="skill-tag">Systems Analysis</span>
+              <span class="skill-tag">SDLC</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-head">
+              <span class="skill-icon icon-blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4 21c0-3.3 3.6-6 8-6s8 2.7 8 6"/></svg>
+              </span>
+              <h3>Tools &amp; Certifications</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">XAMPP</span>
+              <span class="skill-tag">PCAP Python (Cisco)</span>
+              <span class="skill-tag">Certified Software Developer (BNSP)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Projects</span>
+          <h2>Recent missions</h2>
+          <p>Real, self-directed projects — not case studies from a job, built on my own time to learn by shipping.</p>
+        </div>
+
+        <div class="projects-grid reveal">
+          <a class="project-card" href="/projects/naruread.html">
+            <div class="project-thumb thumb-relay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#eaffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="project-codename">Mission: Archive</span>
+              <h3>NaruReader — Self-Hosted Comic Library</h3>
+              <p>A personal comic reader that runs on my own computer: local library, no ads, no third-party accounts, readable from my phone over home Wi-Fi.</p>
+              <div class="project-tags"><span>Node.js</span><span>Express</span><span>React</span><span>SQLite</span></div>
+              <span class="project-link">Read case study →</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="/projects/mazu-learn-jp.html">
+            <div class="project-thumb thumb-beacon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffeafc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M9 8h6M9 12h4"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="project-codename">Contribution</span>
+              <h3>Mazu Learn JP</h3>
+              <p>A friend's interactive Japanese-learning web app (Hiragana to JLPT N4) — I contributed to the front end, with a mobile app planned next.</p>
+              <div class="project-tags"><span>JavaScript</span><span>Web Speech API</span></div>
+              <span class="project-link">Read case study →</span>
+            </div>
+          </a>
+
+          <div class="project-card" style="opacity:0.6; cursor:default;" aria-disabled="true">
+            <div class="project-thumb thumb-cartograph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff4dd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="project-codename">Next mission</span>
+              <h3>More launching soon</h3>
+              <p>Actively building the next one. Check back, or get in touch if you'd like to collaborate on something.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MISSION LOG (experience) ============ -->
+    <section id="log">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Flight path</span>
+          <h2>Mission log</h2>
+          <p>A record of stops along the way, from IT support to shipping my own software.</p>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-marker"><span></span></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Present</span>
+              <h3>Building software on my own</h3>
+              <span class="timeline-org">Self-directed projects</span>
+              <p>Shipping full-stack side projects — NaruReader, a self-hosted comic reader, and a front-end contribution to a friend's Japanese-learning app — while looking for my next role.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item is-past">
+            <div class="timeline-marker"><span></span></div>
+            <div class="timeline-card">
+              <span class="timeline-date">August 2024</span>
+              <h3>Graduated — Diploma in Information Systems</h3>
+              <span class="timeline-org">Bina Sarana Informatika University</span>
+              <p>GPA 3.71/4.00. Coursework in systems analysis and design, database management, software engineering, computer networks, and object-oriented programming.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item is-past">
+            <div class="timeline-marker"><span></span></div>
+            <div class="timeline-card">
+              <span class="timeline-date">August 2023 — June 2024</span>
+              <h3>IT &amp; Facility Building Intern</h3>
+              <span class="timeline-org">PT. Angkasa Pura II, Pontianak</span>
+              <p>Resolved 150+ technical incident tickets via Jira, cutting average resolution time by 20%. Supported 200+ users across hardware, software, and network issues, reducing downtime by 15%.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div class="contact-copy">
+            <span class="eyebrow">Contact</span>
+            <h2>Let's build something worth shipping.</h2>
+            <p>
+              Open to full-time roles, contract work, and interesting collaborations.
+              The fastest way to reach me is email — I read every message myself.
+            </p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:yusufaristokrat@gmail.com">Email me</a>
+              <a class="btn btn-ghost" href="/assets/resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+            </div>
+          </div>
+
+          <div class="contact-links">
+            <a class="contact-link-item" href="mailto:yusufaristokrat@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 6 9-6"/></svg>
+              yusufaristokrat@gmail.com
+            </a>
+            <button class="contact-link-item" type="button" data-copy-email="yusufaristokrat@gmail.com" style="cursor:pointer;text-align:left;width:100%;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy email address
+            </button>
+            <a class="contact-link-item" href="https://github.com/EigaCerion" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              GitHub — EigaCerion
+            </a>
+            <a class="contact-link-item" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg>
+              LinkedIn — [add handle]
+            </a>
+            <p class="copy-feedback" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Yusuf Aristokrat. Built from scratch, no template.</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
